@@ -1,0 +1,10 @@
+
+---
+
+# 2. requirements.txt
+
+```txt
+locust
+pandas
+matplotlib
+reportlab
