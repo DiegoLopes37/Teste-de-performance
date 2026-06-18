@@ -104,6 +104,25 @@ python -m locust -f locustfile.py --headless -u 50 -r 5 --run-time 2m --host htt
 python -m locust -f locustfile.py --headless -u 100 -r 10 --run-time 2m --host https://opensource-demo.orangehrmlive.com --csv resultados_100
 ```
 
+## Execução de Múltiplos Cenários de Teste
+
+Além da execução manual pelo Locust, o projeto possui o script 
+
+```bash
+python executar_testes.py
+```
+responsável por executar automaticamente diferentes cenários de carga e exportar os resultados para arquivos CSV.
+
+Objetivo
+
+Avaliar o comportamento do sistema sob diferentes níveis de concorrência para análise de:
+
+Throughput (requisições por segundo)
+Tempo médio de resposta
+Percentis (P90, P95 e P99)
+Escalabilidade
+Saturação do sistema
+
 ## Geração dos Gráficos
 
 Após executar os testes:
