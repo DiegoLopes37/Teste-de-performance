@@ -58,6 +58,7 @@ orangehrm_performance_test
 ├── docker-compose.yml
 ├── README.md
 ├── gerar_relatorio.py
+|__ executa_testes.py
 └── resultados/
 ```
 
