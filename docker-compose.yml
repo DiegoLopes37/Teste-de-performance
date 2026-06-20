@@ -11,7 +11,13 @@ services:
     ports:
       - "8089:8089"
 
+    volumes:
+        # tudo que o container salvar aqui (CSVs, graficos, PDF)
+        # aparece direto nesta pasta do seu computador
+        - .:/app
+
     command: >
       locust
       -f locustfile.py
       --host https://opensource-demo.orangehrmlive.com
+      --web-host 0.0.0.0

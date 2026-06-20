@@ -139,8 +139,64 @@ Construir e executar:
 
 ```bash
 docker-compose up --build
+
+```
+Subir o Locust com interface web (a pasta do projeto fica espelhada dentro do container, então tudo que for salvo lá aparece direto aqui):
+```bash
+docker compose up
+```
+Acesse http://localhost:8089
+
+Rodar os 3 cenários automaticamente dentro do container:
+```bash
+docker compose run --rm locust python executar_testes.py
+```
+
+Gerar o relatório (gráficos + PDF) dentro do container:
+```bash
+docker compose run --rm locust python gerar_relatorio.py
+```
+
+```bash 
+
+Teste 10 usuários
+docker exec orangehrm_locust locust \
+-f locustfile.py \
+--headless \
+-u 10 \
+-r 2 \
+--run-time 2m \
+--host=https://opensource-demo.orangehrmlive.com \
+--csv=resultados_10
+```
+```bash
+
+Teste 50 usuários
+docker exec orangehrm_locust locust \
+-f locustfile.py \
+--headless \
+-u 50 \
+-r 5 \
+--run-time 2m \
+--host=https://opensource-demo.orangehrmlive.com \
+--csv=resultados_50
+```
+
+```bash
+
+Teste 100 usuários
+docker exec orangehrm_locust locust \
+-f locustfile.py \
+--headless \
+-u 100 \
+-r 10 \
+--run-time 2m \
+--host=https://opensource-demo.orangehrmlive.com \
+--csv=resultados_100
 ```
 
 ## Autor
 
 Diego  Vieira Lopes
+
+
